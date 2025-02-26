@@ -50,27 +50,6 @@ class TranscribeLoadAudioFile(Component):
         print(f"Loaded audio with sampling rate: {audio_dict['sampling_rate']}Hz, duration: {len(audio_dict['array'])/audio_dict['sampling_rate']:.2f}s")
 
 
-@xai_component
-class TranscribePlayAudio(Component):
-    """
-    Provides information about the loaded audio file.
-    (Note: Audio playback is not available outside of Jupyter notebooks)
-
-    ##### inPorts:
-    - audio_data (dict): Dictionary containing the audio array and sampling rate.
-    """
-    audio_data: InCompArg[dict]
-
-    def execute(self, ctx) -> None:
-        audio_dict = self.audio_data.value
-        
-        if audio_dict:
-            duration = len(audio_dict["array"]) / audio_dict["sampling_rate"]
-            print(f"Audio information: {duration:.2f} seconds, {audio_dict['sampling_rate']}Hz")
-            print("Note: Audio playback is only available in Jupyter notebook environments")
-        else:
-            print("No audio data available.")
-
 
 @xai_component
 class TranscribeSpeakerDiarization(Component):

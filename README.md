@@ -39,11 +39,10 @@ pip install -r requirements.txt
 The library provides components for a complete audio transcription pipeline:
 
 1. `TranscribeLoadAudioFile` - Load an audio file or use a sample dataset
-2. `TranscribePlayAudio` - Display information about the loaded audio
-3. `TranscribeSpeakerDiarization` - Identify different speakers in the audio
-4. `TranscribeSpeechTranscription` - Transcribe the audio to text with timestamps
-5. `TranscribeCombineDiarizationAndTranscription` - Combine speaker information with transcription
-6. `TranscribeSaveTranscriptToFile` - Save the formatted transcript to a file
+2. `TranscribeSpeakerDiarization` - Identify different speakers in the audio
+3. `TranscribeSpeechTranscription` - Transcribe the audio to text with timestamps
+4. `TranscribeCombineDiarizationAndTranscription` - Combine speaker information with transcription
+5. `TranscribeSaveTranscriptToFile` - Save the formatted transcript to a file
 
 ## Example
 
