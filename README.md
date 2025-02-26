@@ -38,21 +38,21 @@ pip install -r requirements.txt
 
 The library provides components for a complete audio transcription pipeline:
 
-1. `LoadAudioFile` - Load an audio file or use a sample dataset
-2. `PlayAudio` - Display information about the loaded audio
-3. `SpeakerDiarization` - Identify different speakers in the audio
-4. `SpeechTranscription` - Transcribe the audio to text with timestamps
-5. `CombineDiarizationAndTranscription` - Combine speaker information with transcription
-6. `SaveTranscriptToFile` - Save the formatted transcript to a file
+1. `TranscribeLoadAudioFile` - Load an audio file or use a sample dataset
+2. `TranscribePlayAudio` - Display information about the loaded audio
+3. `TranscribeSpeakerDiarization` - Identify different speakers in the audio
+4. `TranscribeSpeechTranscription` - Transcribe the audio to text with timestamps
+5. `TranscribeCombineDiarizationAndTranscription` - Combine speaker information with transcription
+6. `TranscribeSaveTranscriptToFile` - Save the formatted transcript to a file
 
 ## Example
 
 Create a new Xircuits workflow and add the components in sequence:
-1. Start with `LoadAudioFile` and provide a path to your audio file
-2. Connect to `SpeakerDiarization` (set use_auth_token to True if using Hugging Face models)
-3. Add `SpeechTranscription` (defaults to Whisper base model)
-4. Connect both to `CombineDiarizationAndTranscription`
-5. Finally connect to `SaveTranscriptToFile` to save the results
+1. Start with `TranscribeLoadAudioFile` and provide a path to your audio file
+2. Connect to `TranscribeSpeakerDiarization` (set use_auth_token to True if using Hugging Face models)
+3. Add `TranscribeSpeechTranscription` (defaults to Whisper base model)
+4. Connect both to `TranscribeCombineDiarizationAndTranscription`
+5. Finally connect to `TranscribeSaveTranscriptToFile` to save the results
 
 ## Tests
 A github action to test your workflow runs has been provided. Simply add the path of your workflows [here](.github/workflows/run-workflow-tests.yml#L11).

@@ -2,7 +2,7 @@ from xai_components.base import InArg, OutArg, InCompArg, Component, xai_compone
 import torch
 
 @xai_component
-class LoadAudioFile(Component):
+class TranscribeLoadAudioFile(Component):
     """
     Loads an audio file for processing.
 
@@ -51,7 +51,7 @@ class LoadAudioFile(Component):
 
 
 @xai_component
-class PlayAudio(Component):
+class TranscribePlayAudio(Component):
     """
     Provides information about the loaded audio file.
     (Note: Audio playback is not available outside of Jupyter notebooks)
@@ -73,7 +73,7 @@ class PlayAudio(Component):
 
 
 @xai_component
-class SpeakerDiarization(Component):
+class TranscribeSpeakerDiarization(Component):
     """
     Performs speaker diarization to identify "who spoke when" in an audio file.
 
@@ -135,7 +135,7 @@ class SpeakerDiarization(Component):
 
 
 @xai_component
-class SpeechTranscription(Component):
+class TranscribeSpeechTranscription(Component):
     """
     Transcribes speech in an audio file using Whisper model.
 
@@ -186,7 +186,7 @@ class SpeechTranscription(Component):
 
 
 @xai_component
-class CombineDiarizationAndTranscription(Component):
+class TranscribeCombineDiarizationAndTranscription(Component):
     """
     Combines speaker diarization and transcription results to create a meeting transcript.
 
@@ -277,7 +277,7 @@ class CombineDiarizationAndTranscription(Component):
 
 
 @xai_component
-class SaveTranscriptToFile(Component):
+class TranscribeSaveTranscriptToFile(Component):
     """
     Saves the meeting transcript to a file.
 
