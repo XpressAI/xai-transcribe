@@ -1,14 +1,13 @@
 [project]
-name = "xircuits-component-library-template"
+name = "xai-transcribe"
 version = "0.1.0"
-description = "A brief description of your component library"
-authors = [{ name = "Your Name", email = "you@example.com" }]
+description = "Xircuits components for audio transcription with speaker diarization"
+authors = [{ name = "XpressAI", email = "info@xpress.ai" }]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/yourrepo/your-library"
-keywords = ["xircuits"]
+repository = "https://github.com/xpressai/xai-transcribe"
+keywords = ["xircuits", "audio", "transcription", "diarization", "whisper"]
 
 # Xircuits-specific configurations
 [tool.xircuits]
-default_example_path = "example.xircuits"
 requirements_path = "requirements.txt"
