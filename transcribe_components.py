@@ -1,6 +1,6 @@
 from xai_components.base import InArg, OutArg, InCompArg, Component, xai_component, dynalist, dynatuple
 import torch
-from IPython.display import Audio
+from IPython.display import Audio, display
 
 @xai_component
 class LoadAudioFile(Component):
