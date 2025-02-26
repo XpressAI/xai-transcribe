@@ -12,7 +12,7 @@ class LoadAudioFile(Component):
     ##### outPorts:
     - audio_data (dict): Dictionary containing the audio array and sampling rate.
     """
-    file_path: InArg[str]
+    file_path: InCompArg[str]
     audio_data: OutArg[dict]
 
     def execute(self, ctx) -> None:
@@ -59,7 +59,7 @@ class PlayAudio(Component):
     ##### inPorts:
     - audio_data (dict): Dictionary containing the audio array and sampling rate.
     """
-    audio_data: InArg[dict]
+    audio_data: InCompArg[dict]
 
     def execute(self, ctx) -> None:
         audio_dict = self.audio_data.value
@@ -84,8 +84,8 @@ class SpeakerDiarization(Component):
     ##### outPorts:
     - diarization_result (list): List of speaker segments with start/end times.
     """
-    audio_data: InArg[dict]
-    use_auth_token: InArg[bool]
+    audio_data: InCompArg[dict]
+    use_auth_token: InCompArg[bool]
     diarization_result: OutArg[list]
 
     def __init__(self):
@@ -146,8 +146,8 @@ class SpeechTranscription(Component):
     ##### outPorts:
     - transcription_result (dict): Dictionary containing the transcription with timestamps.
     """
-    audio_data: InArg[dict]
-    model_name: InArg[str]
+    audio_data: InCompArg[dict]
+    model_name: InCompArg[str]
     transcription_result: OutArg[dict]
 
     def __init__(self):
@@ -197,8 +197,8 @@ class CombineDiarizationAndTranscription(Component):
     ##### outPorts:
     - combined_transcript (list): List of segments with speaker, text, and timestamps.
     """
-    diarization_result: InArg[list]
-    transcription_result: InArg[dict]
+    diarization_result: InCompArg[list]
+    transcription_result: InCompArg[dict]
     combined_transcript: OutArg[list]
 
     def execute(self, ctx) -> None:
@@ -285,8 +285,8 @@ class SaveTranscriptToFile(Component):
     - combined_transcript (list): List of segments with speaker, text, and timestamps.
     - output_file (str): Path to save the transcript file.
     """
-    combined_transcript: InArg[list]
-    output_file: InArg[str]
+    combined_transcript: InCompArg[list]
+    output_file: InCompArg[str]
 
     def __init__(self):
         super().__init__()
