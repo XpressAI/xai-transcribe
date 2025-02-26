@@ -1,6 +1,5 @@
 from xai_components.base import InArg, OutArg, InCompArg, Component, xai_component, dynalist, dynatuple
 import torch
-from IPython.display import Audio, display
 
 @xai_component
 class LoadAudioFile(Component):
@@ -54,7 +53,8 @@ class LoadAudioFile(Component):
 @xai_component
 class PlayAudio(Component):
     """
-    Plays the loaded audio file.
+    Provides information about the loaded audio file.
+    (Note: Audio playback is not available outside of Jupyter notebooks)
 
     ##### inPorts:
     - audio_data (dict): Dictionary containing the audio array and sampling rate.
@@ -65,9 +65,11 @@ class PlayAudio(Component):
         audio_dict = self.audio_data.value
         
         if audio_dict:
-            display(Audio(audio_dict["array"], rate=audio_dict["sampling_rate"]))
+            duration = len(audio_dict["array"]) / audio_dict["sampling_rate"]
+            print(f"Audio information: {duration:.2f} seconds, {audio_dict['sampling_rate']}Hz")
+            print("Note: Audio playback is only available in Jupyter notebook environments")
         else:
-            print("No audio data available to play.")
+            print("No audio data available.")
 
 
 @xai_component
