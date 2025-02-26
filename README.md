@@ -1,5 +1,7 @@
 # Xircuits Audio Transcription Components
 
+<img width="1554" alt="image" src="https://github.com/user-attachments/assets/608c3c2d-168d-47c9-b623-5f8dc0bc15bc" />
+
 A Xircuits component library for transcribing audio into text with speaker diarization. This library provides components for:
 
 - Loading and processing audio files
